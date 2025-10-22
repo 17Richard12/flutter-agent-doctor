@@ -1,0 +1,12 @@
+# Google Cloud Configuration
+GOOGLE_CLOUD_PROJECT=rich-pro-468113
+GOOGLE_CLOUD_LOCATION=us-central1
+GOOGLE_CLOUD_STORAGE_BUCKET=flutter-doctor
+
+# API Keys
+GOOGLE_PLACES_API_KEY=AIzaSyBTpvBooRPTz1tyGxcxcsmqXMXIp39GFos
+GOOGLE_API_KEY=AIzaSyDEHZOa__qk9FzVC26QCTAXgkU5x8DuiTI
+
+# Deployment Configuration
+DEPLOYMENT_NAME=Healthcare-Agent-ADK
+DEPLOYMENT_DESCRIPTION=Healthcare Agent System with symptom analysis, Home remdies suggester and hospital finder
