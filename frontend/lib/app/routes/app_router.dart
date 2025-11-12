@@ -1,6 +1,10 @@
+import 'package:frontend/features/auth/presentation/pages/login_page.dart';
+import 'package:frontend/features/auth/presentation/pages/register_page.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter/material.dart'; // Untuk BuildContext jika perlu
 // Impor halaman-halaman fitur Anda di sini nanti
+// import 'package:frontend/features/auth/presentation/pages/login_page.dart';
+// import 'package:frontend/features/auth/presentation/pages/register_page.dart';
 // import 'package:mediai_agent/features/symptom_analysis/presentation/pages/symptom_input_page.dart';
 // import 'package:mediai_agent/features/hospital_results/presentation/pages/results_page.dart';
 // import 'package:mediai_agent/features/search_history/presentation/pages/history_page.dart';
@@ -18,8 +22,25 @@ class PlaceholderPage extends StatelessWidget {
 }
 
 final GoRouter router = GoRouter(
-  initialLocation: '/symptom_input', // Rute awal aplikasi
+  // 1. RUTE AWAL DIUBAH KE /login
+  initialLocation: '/login', // Rute awal aplikasi
   routes: [
+    // 2. RUTE LOGIN DITAMBAHKAN
+    GoRoute(
+      path: '/login',
+      name: 'login',
+      builder: (context, state) =>
+          const LoginPage(), // Ganti dengan LoginPage asli nanti
+    ),
+    // 3. RUTE REGISTER DITAMBAHKAN
+    GoRoute(
+      path: '/register',
+      name: 'register',
+      builder: (context, state) =>
+          const RegisterPage(), // Ganti dengan RegisterPage asli nanti
+    ),
+
+    // Rute-rute Anda yang sudah ada
     GoRoute(
       path: '/symptom_input',
       name: 'symptomInput',
