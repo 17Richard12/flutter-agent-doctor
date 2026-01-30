@@ -67,7 +67,7 @@ COORDINATOR_PROMPT = """You are a helpful healthcare coordinator managing three 
 
 **Important Guidelines:**
 - Always prioritize patient safety and emergency situations
-- For medical emergencies, emphasize calling 108 immediately (India Emergency Number)
+- For medical emergencies, emphasize calling 112 immediately (Indonesia Emergency Number)
 - Provide comprehensive responses that address all user needs
 - Be empathetic and understanding in all interactions
 - Include appropriate medical disclaimers
@@ -106,7 +106,7 @@ When interacting with patients:
 - Ask follow-up questions to better understand their situation
 - Provide clear, easy-to-understand explanations
 - Always emphasize the importance of professional medical care
-- For emergencies, immediately direct to call 108 (India Emergency Number)
+- For emergencies, immediately direct to call 112 (Indonesia Emergency Number)
 - Use Google Search to find additional medical information when needed
 
 **IMAGE ANALYSIS GUIDELINES:**
@@ -131,7 +131,7 @@ Example interactions:
 - 'For more detailed information about this condition, let me search for recent medical information...'"""
 
 # Hospital finder agent prompt
-HOSPITAL_FINDER_PROMPT = """You are a helpful medical facility locator for India. Your role is to:
+HOSPITAL_FINDER_PROMPT = """You are a helpful medical facility locator for Indoensia. Your role is to:
 
 1. **Auto-detect location** - Automatically detect user's location using IP address
 2. **Find nearby hospitals** - Locate hospitals and medical facilities in the detected area
@@ -145,28 +145,28 @@ When helping users find medical facilities:
 - For emergencies, prioritize emergency hospitals and urgent care centers
 - Suggest multiple options when available
 - Provide clear contact information for all facilities
-- Focus on hospitals in India with local contact details
+- Focus on hospitals in Indoneisa with local contact details
 
 IMPORTANT REMINDERS:
-- For medical emergencies, always remind users to call 108 immediately (India Emergency Number)
+- For medical emergencies, always remind users to call 112 immediately (Indonesia Emergency Number)
 - Automatically detect location - no need to ask users for their location
 - Provide multiple hospital options when available
 - Include contact information for all facilities
 - Prioritize emergency facilities for urgent situations
-- Provide hospitals with Indian phone numbers and addresses
+- Provide hospitals with Indonesia phone numbers and addresses
 
 Example interactions:
 - 'I've detected your location and found nearby hospitals in your area.'
 - 'Let me find the nearest emergency hospitals based on your current location.'
 - 'Here are the top-rated hospitals near you with their contact information.'
-- 'For your emergency situation, here are the closest hospitals with directions. Remember to call 108 immediately.'"""
+- 'For your emergency situation, here are the closest hospitals with directions. Remember to call 112 immediately.'"""
 
 # # To Be Use in the Future: Emergency guidance templates
 EMERGENCY_GUIDANCE = {
     "heart_attack": {
         "signs": ["Chest pain", "Shortness of breath", "Nausea", "Sweating", "Pain in arm or jaw"],
         "actions": [
-            "🚨 Call 108 immediately (India Emergency Number)",
+            "🚨 Call 112 immediately (Indonesia Emergency Number)",
             "Help person sit down and rest",
             "Loosen tight clothing",
             "If prescribed, help with nitroglycerin",
@@ -176,7 +176,7 @@ EMERGENCY_GUIDANCE = {
     "stroke": {
         "signs": ["Face drooping", "Arm weakness", "Speech difficulty", "Sudden confusion"],
         "actions": [
-            "🚨 Call 108 immediately (India Emergency Number)",
+            "🚨 Call 112 immediately (Indoensia Emergency Number)",
             "Note the time symptoms started",
             "Keep person calm and lying down",
             "Turn head to side if vomiting",
@@ -188,14 +188,14 @@ EMERGENCY_GUIDANCE = {
         "actions": [
             "Ask 'Are you choking?'",
             "If unable to speak, perform Heimlich maneuver",
-            "Call 108 if unsuccessful",
+            "Call 112 if unsuccessful",
             "Continue until object dislodges or person becomes unconscious"
         ]
     },
     "severe_bleeding": {
         "signs": ["Heavy bleeding", "Deep cuts", "Bleeding that won't stop"],
         "actions": [
-            "🚨 Call 108 for severe bleeding (India Emergency Number)",
+            "🚨 Call 112 for severe bleeding (Indonesia Emergency Number)",
             "Apply direct pressure with clean cloth",
             "Elevate injured area above heart if possible",
             "Don't remove object if embedded",
@@ -205,7 +205,7 @@ EMERGENCY_GUIDANCE = {
     "allergic_reaction": {
         "signs": ["Difficulty breathing", "Swelling of face/throat", "Hives", "Rapid pulse"],
         "actions": [
-            "🚨 Call 108 immediately (India Emergency Number)",
+            "🚨 Call 112 immediately (Indonesia Emergency Number)",
             "Use EpiPen if available",
             "Help person sit upright",
             "Remove or avoid allergen",
@@ -484,5 +484,5 @@ HOME_REMEDIES_DATABASE = {
 
 # Medical disclaimer
 MEDICAL_DISCLAIMER = """
-⚠️ MEDICAL DISCLAIMER: This information is for educational purposes only and should not replace professional medical advice. Always consult with healthcare professionals for proper diagnosis and treatment. For medical emergencies, call 108 immediately (India Emergency Number).
+⚠️ MEDICAL DISCLAIMER: This information is for educational purposes only and should not replace professional medical advice. Always consult with healthcare professionals for proper diagnosis and treatment. For medical emergencies, call 112 immediately (Indonesia Emergency Number).
 """ 

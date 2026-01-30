@@ -8,6 +8,9 @@ requests>=2.31.0
 # Environment management
 python-dotenv>=1.0.0
 
+flask>=3.0.0
+flask-cors>=3.0.1
+
 # Optional: For development and testing
 # pytest>=7.0.0
 # black>=23.0.0

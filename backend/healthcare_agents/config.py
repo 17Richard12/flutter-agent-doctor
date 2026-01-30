@@ -31,8 +31,8 @@ class HealthcareAgentConfig:
     # Model Configuration
     DEFAULT_MODEL = os.getenv("DEFAULT_MODEL", "gemini-3-pro-preview")
     
-    # India-specific Configuration
-    EMERGENCY_NUMBER = "108"  # India Emergency Number
+    # Indonesia-specific Configuration
+    EMERGENCY_NUMBER = "112"  # Indonesia Emergency Number
     
     @classmethod
     def validate_config(cls) -> list:
