@@ -10,6 +10,9 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 try:
     from healthcare_agents.agent import root_agent
+    from healthcare_agents.hospital_finder_agent import hospital_finder_agent 
+    from google.adk.runners import InMemoryRunner
+    from google.genai import types
     from google.adk.runners import InMemoryRunner
     from google.genai import types
 except ImportError as e:
@@ -75,6 +78,49 @@ async def chat():
     except Exception as e:
         # Simple error handling as requested
         print(f"Error processing chat message: {e}")
+        return jsonify({
+            "status": "error",
+            "message": str(e)
+        }), 500
+    
+@app.route('/api/hospitals', methods=['GET'])
+async def find_hospitals():
+    """
+    Endpoint khusus untuk mencari rumah sakit terdekat.
+    Menggunakan hospital_finder_agent untuk deteksi lokasi otomatis dan Google Places API.
+    """
+    try:
+        # Inisialisasi runner dengan hospital_finder_agent
+        runner = InMemoryRunner(agent=hospital_finder_agent)
+
+        await runner.session_service.create_session(
+            app_name=runner.app_name,
+            user_id="user",
+            session_id="hospital_search"
+        )
+
+        # Memberikan instruksi langsung ke agent untuk mencari
+        user_query = "Cari rumah sakit terdekat dari lokasi saya sekarang"
+        new_message = types.Content(parts=[types.Part(text=user_query)], role="user")
+
+        response_text = ""
+        async for event in runner.run_async(
+            user_id="user",
+            session_id="hospital_search",
+            new_message=new_message
+        ):
+            if event.content and event.content.parts:
+                for part in event.content.parts:
+                    if part.text:
+                        response_text += part.text
+
+        return jsonify({
+            "status": "success",
+            "data": response_text
+        })
+
+    except Exception as e:
+        print(f"Error finding hospitals: {e}")
         return jsonify({
             "status": "error",
             "message": str(e)
